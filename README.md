@@ -45,6 +45,60 @@ In this Coffee Machine Project, your task is to implement the logic (starting fr
   I want to see a message to the coffee machine console that indicates me the shortage
   and that a notification has been sent
 
+## Requirements
+
+For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+
+### Node
+
+- #### Node installation (Ubuntu)
+
+  You can install nodejs and npm easily with apt install, just run the following commands.
+
+  ``` sh
+    $ sudo apt install nodejs
+    $ sudo apt install npm
+  ```
+- #### Other Operating Systems
+  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+
+  If the installation was successful, you should be able to run the following command.
+
+  ``` sh
+    $ node --version
+    v13.7.0
+  ```
+
+  ``` sh
+    $ npm --version
+    6.13.6
+  ```
+
+### Yarn installation
+
+After installing node, this project will need yarn too, so just run the following command.
+
+``` sh
+  $ npm install -g yarn
+```
+
+---
+
+## Install
+
+``` sh
+  $ git clone https://github.com/MaskedHawk/CoffeeMachine
+  $ cd CoffeeMachine
+  $ yarn install
+```
+
+
+## Running the current branch test
+
+``` sh
+  $ yarn test
+```
+
 ### License
 
 [MIT](https://choosealicense.com/licenses/mit/) In short, you can do (almost) what you want, as long as you provide attribution to me (MaskedHawk).
