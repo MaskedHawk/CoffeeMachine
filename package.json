@@ -1,0 +1,16 @@
+{
+  "name": "CoffeeMachine",
+  "version": "1.0.0",
+  "description": "This mini project is used to learn Test Driven Development",
+  "main": "src/index.js",
+  "script": {
+    "test": "yarn test"
+  },
+  "repository": "git@github.com:MaskedHawk/CoffeeMachine.git",
+  "author": "Alexis Bollia <alexis.bollia@spallian.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
