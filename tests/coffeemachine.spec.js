@@ -1,6 +1,6 @@
 const {drinks, Order} = require('../src/Order.js');
 
-describe('Turns customers orders into drink maker instructions', () => {
+describe('Turns customers simple orders into drink maker instructions', () => {
     it('Should return T:1:0 when order is 1 tea with 1 sugar and enough money', () => {
         const command = new Order({
                 drinks: drinks.TEA,
@@ -51,3 +51,37 @@ describe('Turns customers orders into drink maker instructions', () => {
     });
 });
 
+describe('Turns customers extra orders into drink maker instructions', () => {
+    it('Should return Th:1:0 when order is 1 hot tea with 1 sugar and enough money', () => {
+        const command = new Order({
+            drinks: drinks.TEA,
+            sugar: 1,
+            money: 0.4,
+            hot: true
+        }).toInstruction();
+
+        expect(command).toEqual('Th:1:0');
+    });
+
+    it('Should return Hh:1:0 when order is 1 hot chocolate with 1 sugar and enough money', () => {
+        const command = new Order({
+            drinks: drinks.CHOCOLATE,
+            sugar: 1,
+            money: 0.5,
+            hot: true
+        }).toInstruction();
+
+        expect(command).toEqual('Hh:1:0');
+    });
+
+    it('Should return Ch:1:0 when order is 1 hot coffee with 1 sugar and enough money', () => {
+        const command = new Order({
+            drinks: drinks.COFFEE,
+            sugar: 1,
+            money: 0.6,
+            hot: true
+        }).toInstruction();
+
+        expect(command).toEqual('Ch:1:0');
+    });
+});

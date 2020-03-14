@@ -1,15 +1,19 @@
 const drinks = {
     TEA : {
-        code: "T",
+        code: 'T',
         price: 0.4
     },
     COFFEE : {
-        code: "C",
+        code: 'C',
         price: 0.6
     },
     CHOCOLATE : {
-        code :"H",
+        code : 'H',
         price: 0.5
+    },
+    ORANGE : {
+        code: 'O',
+        price: 0.6
     }
 };
 
@@ -25,11 +29,13 @@ class Order {
     constructor({
         drinks = "",
         sugar = 0,
-        money = 0
+        money = 0,
+        hot = false
     }){
         this.drinks = drinks;
         this.sugar = sugar;
         this.money = money;
+        this.hot = hot;
     };
 
     _isEnoughMoney(){
@@ -44,11 +50,16 @@ class Order {
             return `M:${missingMoney} missing`
         }
 
+        if (this.drinks === drinks.ORANGE) return 'O::'
+
+        let temperature = this.hot ? 'h' : '';
+        let finalDrinks = this.drinks.code + temperature;
+
         if (this.sugar == 0) {
-            return `${this.drinks.code}::`;
+            return `${finalDrinks}::`;
         }
 
-        return `${this.drinks.code}:${this.sugar}:0`;
+        return `${finalDrinks}:${this.sugar}:0`;
     };
 }
 
